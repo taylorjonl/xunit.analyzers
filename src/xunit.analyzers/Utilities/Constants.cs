@@ -100,6 +100,7 @@ namespace Xunit.Analyzers
 			// Xunit
 			public const string XunitAssert = "Xunit.Assert";
 			public const string XunitClassDataAttribute = "Xunit.ClassDataAttribute";
+			public const string XunitCollectionAttribute = "Xunit.CollectionAttribute";
 			public const string XunitCollectionDefinitionAttribute = "Xunit.CollectionDefinitionAttribute";
 			public const string XunitFactAttribute = "Xunit.FactAttribute";
 			public const string XunitIAsyncLifetime = "Xunit.IAsyncLifetime";

@@ -6,6 +6,8 @@ namespace Xunit.Analyzers
 	{
 		public INamedTypeSymbol? ClassDataAttributeType => null;
 
+		public INamedTypeSymbol? CollectionAttributeType => null;
+
 		public INamedTypeSymbol? CollectionDefinitionAttributeType => null;
 
 		public INamedTypeSymbol? DataAttributeType => null;

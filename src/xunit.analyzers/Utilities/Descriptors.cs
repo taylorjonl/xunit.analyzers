@@ -287,7 +287,14 @@ namespace Xunit.Analyzers
 				"Collection definition classes must be public. Add or change the visibility modifier of the collection definition class to public."
 			);
 
-		// Placeholder for rule X1028
+		public static DiagnosticDescriptor X1028_CollectionDefinitionShouldBeDefinedInTheSameAssemblyAsItsUsages { get; } =
+			Rule(
+				"xUnit1028",
+				"Collection definition should be defined in the same assembly as its usages",
+				Usage,
+				Error,
+				"Collection definition classes must be defined in the same assembly as its usages. Add a copy of this collection definition to the project with tests that use it."
+			);
 
 		// Placeholder for rule X1029
 

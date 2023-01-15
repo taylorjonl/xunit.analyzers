@@ -7,6 +7,7 @@ namespace Xunit.Analyzers
 	public class V3CoreContext : ICoreContext
 	{
 		readonly Lazy<INamedTypeSymbol?> lazyClassDataAttributeType;
+		readonly Lazy<INamedTypeSymbol?> lazyCollectionAttributeType;
 		readonly Lazy<INamedTypeSymbol?> lazyCollectionDefinitionAttributeType;
 		readonly Lazy<INamedTypeSymbol?> lazyDataAttributeType;
 		readonly Lazy<INamedTypeSymbol?> lazyFactAttributeType;
@@ -23,6 +24,7 @@ namespace Xunit.Analyzers
 			Version = version;
 
 			lazyClassDataAttributeType = new(() => compilation.GetTypeByMetadataName(Constants.Types.XunitClassDataAttribute));
+			lazyCollectionAttributeType = new(() => compilation.GetTypeByMetadataName(Constants.Types.XunitCollectionAttribute));
 			lazyCollectionDefinitionAttributeType = new(() => compilation.GetTypeByMetadataName(Constants.Types.XunitCollectionDefinitionAttribute));
 			lazyDataAttributeType = new(() => compilation.GetTypeByMetadataName(Constants.Types.XunitSdkDataAttribute));
 			lazyFactAttributeType = new(() => compilation.GetTypeByMetadataName(Constants.Types.XunitFactAttribute));
@@ -35,6 +37,9 @@ namespace Xunit.Analyzers
 
 		public INamedTypeSymbol? ClassDataAttributeType =>
 			lazyClassDataAttributeType.Value;
+
+		public INamedTypeSymbol? CollectionAttributeType =>
+			lazyCollectionAttributeType.Value;
 
 		public INamedTypeSymbol? CollectionDefinitionAttributeType =>
 			lazyCollectionDefinitionAttributeType.Value;
